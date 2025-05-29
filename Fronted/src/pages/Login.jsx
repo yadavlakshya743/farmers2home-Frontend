@@ -18,7 +18,7 @@ const Login = () => {
     setErrorMessage('');
 
     try {
-      const response = await axios.post('http://localhost:8000/api/auth/login', {
+      const response = await axios.post('api_vercel/auth/login', {
         email,
         password,
       });

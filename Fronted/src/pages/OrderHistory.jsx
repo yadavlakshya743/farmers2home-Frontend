@@ -26,7 +26,7 @@ const OrderHistory = () => {
           } 
         };
         
-        const res = await axios.get('http://localhost:8000/api/orders/my-orders', config);
+        const res = await axios.get('api_vercel/orders/my-orders', config);
         setOrders(res.data);
       } catch (err) {
         setError(err.response?.data?.message || 'Failed to fetch orders. Please try again.');

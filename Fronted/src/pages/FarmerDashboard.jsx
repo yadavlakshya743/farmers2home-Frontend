@@ -45,7 +45,7 @@ const FarmerDashboard = () => {
         return;
       }
 
-      const response = await axios.get('http://localhost:8000/api/products/my-products', {
+      const response = await axios.get('api_vercel/products/my-products', {
         headers: { 
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -146,7 +146,7 @@ const FarmerDashboard = () => {
 
       if (selectedProduct) {
         await axios.put(
-          `http://localhost:8000/api/products/${selectedProduct._id}`,
+          `api_vercel/products/${selectedProduct._id}`,
           productData,
           { 
             headers: { 
@@ -158,7 +158,7 @@ const FarmerDashboard = () => {
         setMessage('Product updated successfully!');
       } else {
         await axios.post(
-          'http://localhost:8000/api/products',
+          'api_vercel/products',
           productData,
           { 
             headers: { 
@@ -199,7 +199,7 @@ const FarmerDashboard = () => {
       }
 
       await axios.delete(
-        `http://localhost:8000/api/products/${productId}`,
+        `api_vercel/products/${productId}`,
         { 
           headers: { 
             Authorization: `Bearer ${token}`,

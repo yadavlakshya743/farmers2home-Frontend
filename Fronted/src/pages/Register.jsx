@@ -69,7 +69,7 @@ const Register = () => {
 
   const registerUser = async (userData) => {
     try {
-      const response = await axios.post('http://localhost:8000/api/auth/register', userData);
+      const response = await axios.post('api_vercel/auth/register', userData);
       return { success: true, data: response.data };
     } catch (error) {
       return {

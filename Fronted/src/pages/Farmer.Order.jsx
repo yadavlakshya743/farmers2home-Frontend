@@ -13,7 +13,7 @@ const FarmerOrders = () => {
     try {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      const response = await axios.get('http://localhost:8000/api/orders/farmer-orders', config);
+      const response = await axios.get('api_vercel/orders/farmer-orders', config);
       setOrders(response.data);
     } catch (error) {
       console.error('Error fetching orders:', error);
@@ -24,7 +24,7 @@ const FarmerOrders = () => {
     try {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
-      await axios.put(`http://localhost:8000/api/orders/${orderId}`, { status }, config);
+      await axios.put(`api_vercel/orders/${orderId}`, { status }, config);
       fetchOrders(); // Refresh orders after update
     } catch (error) {
       console.error('Error updating order status:', error);

@@ -28,7 +28,7 @@ const CustomerDashboard = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:8000/api/products');
+      const response = await axios.get('api_vercel/products');
       setProducts(response.data.products || []);
       setFilteredProducts(response.data.products || []);
     } catch (err) {
@@ -92,7 +92,7 @@ const CustomerDashboard = () => {
       }
 
       const response = await axios.post(
-        'http://localhost:8000/api/orders',
+        'api_vercel/orders',
         {
           items: [{ product: selectedProduct._id, quantity: orderForm.quantity }],
           deliveryType: orderForm.deliveryType,
